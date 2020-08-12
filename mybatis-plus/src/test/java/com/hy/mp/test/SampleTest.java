@@ -1,5 +1,6 @@
 package com.hy.mp.test;
 
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.hy.mp.entity.User;
 import com.hy.mp.mapper.UserMapper;
 import org.junit.Assert;
@@ -23,11 +24,19 @@ public class SampleTest {
     private UserMapper userMapper;
 
     @Test
-    public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
-        List<User> userList = userMapper.selectList(null);
-        Assert.assertEquals(5, userList.size());
-        userList.forEach(System.out::println);
+    public void testInsert() {
+        User user = new User().setAge(22).setName("hu");
+        int insertNum = userMapper.insert(user);
+        System.out.println(insertNum);
+        assert (insertNum > 0);
+        System.out.println(user);
     }
 
+    @Test
+    public void testSelect() {
+        System.out.println(("----- selectAll method test ------"));
+        List<User> userList = userMapper.selectList(Wrappers.emptyWrapper());
+        assert (userList.size() > 0);
+        userList.forEach(System.out::println);
+    }
 }
