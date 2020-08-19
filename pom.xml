@@ -6,6 +6,9 @@
 	<modules>
 		<module>netty</module>
 		<module>mybatis-plus</module>
+        <module>java-base</module>
+        <module>hutool</module>
+		<module>lombok</module>
 	</modules>
 	<groupId>com.hy</groupId>
 	<artifactId>start</artifactId>

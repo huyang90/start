@@ -5,13 +5,11 @@ import lombok.experimental.Accessors;
 
 /**
  * @outhor huyang
- * @create 2020/08/12 10:32
+ * @create 2020/08/14 16:44
  */
-@Accessors(chain = true)
 @Data
-public class User {
+@Accessors(chain = true)
+public class Class {
     private Long id;
     private String name;
-    private Integer age;
-    private Long classId;
 }
